@@ -10263,7 +10263,7 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 		}
 
 		int oldHealth = health;
-		health -= damage;
+		// health -= damage; // edit from video lecture
 
 		GAMELOG_ADD ( va("player%d_damage_taken", entityNumber ), damage );
 		GAMELOG_ADD ( va("player%d_damage_%s", entityNumber, damageDefName), damage );
@@ -13280,6 +13280,7 @@ bool idPlayer::CanDamage( const idVec3 &origin, idVec3 &damagePoint, idEntity *i
 		return false;
 	}
 
+	return false; // following edit from video lecture
 	return idActor::CanDamage( origin, damagePoint, ignoreEnt );
 }
 
